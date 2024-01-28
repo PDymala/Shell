@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<HBox minHeight="500.0" minWidth="400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diplabs.shell.Controller">
+   <children>
+      <VBox alignment="TOP_CENTER" spacing="20.0">
+          <padding>
+              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+          </padding>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Key generator" />
+         <TextField fx:id="textFieldClientName" promptText="Prefix (optional)" />
+          <Button onAction="#generateKeys" text="Generate keys" />
+         <Separator prefWidth="200.0" />
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="File encryption" />
+         <HBox alignment="CENTER">
+            <children>
+               <Button mnemonicParsing="false" onAction="#loadPublicKey" text="Load public key">
+                  <HBox.margin>
+                     <Insets right="20.0" />
+                  </HBox.margin>
+               </Button>
+               <Text fx:id="textPublicKey" strokeType="OUTSIDE" strokeWidth="0.0" text="no key">
+                  <HBox.margin>
+                     <Insets left="20.0" />
+                  </HBox.margin>
+               </Text>
+            </children>
+            <VBox.margin>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </VBox.margin>
+         </HBox>
+         <HBox alignment="CENTER" layoutX="40.0" layoutY="191.0">
+            <children>
+               <Button mnemonicParsing="false" onAction="#loadFileToEncrypt" text="Load file to encrypt">
+                  <HBox.margin>
+                     <Insets right="20.0" />
+                  </HBox.margin>
+               </Button>
+               <Text fx:id="textFileToEncrypt" strokeType="OUTSIDE" strokeWidth="0.0" text="no file">
+                  <HBox.margin>
+                     <Insets left="20.0" />
+                  </HBox.margin>
+               </Text>
+            </children>
+         </HBox>
+         <Button mnemonicParsing="false" onAction="#encrypt" text="Encrypt" />
+         <Separator layoutX="30.0" layoutY="159.0" prefWidth="200.0" />
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="File decryption" />
+         <HBox alignment="CENTER" layoutX="40.0" layoutY="228.0">
+            <children>
+               <Button mnemonicParsing="false" onAction="#loadPrivateKey" text="Load private key">
+                  <HBox.margin>
+                     <Insets right="20.0" />
+                  </HBox.margin>
+               </Button>
+               <Text fx:id="textPrivateKey" strokeType="OUTSIDE" strokeWidth="0.0" text="no key">
+                  <HBox.margin>
+                     <Insets left="20.0" />
+                  </HBox.margin>
+               </Text>
+            </children>
+         </HBox>
+         <HBox alignment="CENTER" layoutX="40.0" layoutY="191.0">
+            <children>
+               <Button mnemonicParsing="false" onAction="#loadFileToDecrypt" text="Load file to decrypt">
+                  <HBox.margin>
+                     <Insets right="20.0" />
+                  </HBox.margin>
+               </Button>
+               <Text fx:id="textFileToDecrypt" strokeType="OUTSIDE" strokeWidth="0.0" text="no file">
+                  <HBox.margin>
+                     <Insets left="20.0" />
+                  </HBox.margin>
+               </Text>
+            </children>
+         </HBox>
+         <Button mnemonicParsing="false" onAction="#decrypt" text="Decrypt" />
+      </VBox>
+      <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="366.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Log" />
+            <TextFlow fx:id="textFlowLogger" prefHeight="438.0" prefWidth="168.0" style="-fx-background-color: #fff;">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </TextFlow>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</HBox>
