@@ -16,7 +16,7 @@ public class Application extends javafx.application.Application {
         Controller controller = fxmlLoader.getController();
         controller.setPrimaryStage(stage);
 
-        stage.setTitle("Hello!");
+        stage.setTitle("SHELL!");
         stage.setScene(scene);
         stage.show();
     }
